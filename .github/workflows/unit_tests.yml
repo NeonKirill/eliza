@@ -15,6 +15,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements/test_requirements.txt
       - name: Test Eliza
         run: |
           pytest tests/test_eliza.py --doctest-modules --junitxml=tests/test-eliza-test-results.xml
