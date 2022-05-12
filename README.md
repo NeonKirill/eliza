@@ -20,7 +20,8 @@ Goodbye.  Thank you for talking to me.
 ...or imported and used as a library:
 
 ```python
-import eliza
+
+from eliza import eliza
 
 eliza = eliza.Eliza()
 eliza.load('doctor.txt')
