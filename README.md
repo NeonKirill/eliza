@@ -21,9 +21,9 @@ Goodbye.  Thank you for talking to me.
 
 ```python
 
-from eliza import eliza
+from eliza import Eliza
 
-eliza = eliza.Eliza()
+eliza = Eliza()
 eliza.load('doctor.txt')
 
 print(eliza.initial())
@@ -34,4 +34,9 @@ while True:
         break
     print(response)
 print(eliza.final())
+```
+
+...or setted up as a dependency:
+```
+    pip install git+https://github.com/NeonGeckoCom/eliza
 ```
