@@ -20,9 +20,10 @@ Goodbye.  Thank you for talking to me.
 ...or imported and used as a library:
 
 ```python
-import eliza
 
-eliza = eliza.Eliza()
+from eliza import Eliza
+
+eliza = Eliza()
 eliza.load('doctor.txt')
 
 print(eliza.initial())
@@ -33,4 +34,9 @@ while True:
         break
     print(response)
 print(eliza.final())
+```
+
+...or setted up as a dependency:
+```
+    pip install git+https://github.com/NeonGeckoCom/eliza
 ```

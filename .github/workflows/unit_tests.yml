@@ -1,0 +1,28 @@
+name: Run Unit Tests
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  unit_tests:
+    strategy:
+      matrix:
+        python-version: [ 3.6, 3.7, 3.8, 3.9 ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements/test_requirements.txt
+      - name: Test Eliza
+        run: |
+          pytest tests/test_eliza.py --doctest-modules --junitxml=tests/test-eliza-test-results.xml
+      - name: Upload Eliza test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-eliza-test-results
+          path: tests/test-eliza-test-results.xml
