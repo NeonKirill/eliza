@@ -55,12 +55,6 @@ import logging
 import random
 import re
 
-# Fix Python2/Python3 incompatibility
-from past.builtins import raw_input
-
-try: input = raw_input
-except NameError: pass
-
 log = logging.getLogger(__name__)
 
 
