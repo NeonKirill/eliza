@@ -52,10 +52,12 @@
 
 
 import logging
+import os
 import random
 import re
 
 log = logging.getLogger(__name__)
+os.chdir(os.path.dirname(__file__))
 
 
 class Key:
